@@ -1,0 +1,4 @@
+discord
+pytube
+sqlalchemy
+PyNaCl
