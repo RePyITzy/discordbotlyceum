@@ -28,8 +28,9 @@ class Player(commands.Bot):
             os.rename(downloaded_file, os.path.join(r'apps\player\loaded', 'music.mp3'))
 
             vc = self.get_guild(1225508549111840831).get_channel(channel_id)
-            await vc.connect()
-
+            try: await vc.connect()
+            except Exception: pass
+                
             voice = self.voice_clients[0]
             voice.play(discord.FFmpegPCMAudio(source=r'apps\player\loaded\music.mp3', executable=rf'data\ffmpeg\bin\ffmpeg.exe'))
 
